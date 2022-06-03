@@ -1,0 +1,153 @@
+@use './variables' as var;
+
+.main {
+  width: 100%;
+  padding-top: var.$header_height;
+
+  .main-visual {
+    width: 100%;
+    min-height: 85vh;
+    margin: 0 auto;
+    background-color: rgb(7, 98, 158);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .main-letter {
+      cursor: default;
+      font-size: 120px;
+      font-family: var.$caption;
+      color: white;
+      transition: 200ms;
+      &:hover {
+        color: var.$Second_color;
+      }
+    }
+  }
+
+  .about {
+    width: 100%;
+    min-height: 85vh;
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: 5% repeat(3, 1fr) 5%;
+    grid-template-rows: 10% repeat(3, 1fr) 10%;
+    gap: 20px;
+    background-color: rgb(8, 78, 139);
+
+    .portrait {
+      grid-column: 2/3;
+      grid-row: 2/4;
+      background-color: rgb(110, 166, 227);
+    }
+
+    .about-content {
+      grid-column: 3/5;
+      grid-row: 2/5;
+      border-radius: var.$border;
+      background-color: rgba(65, 93, 119, 0.632);
+      display: flex;
+      justify-content: center;
+    }
+
+    .about-btn {
+      grid-column: 3/5;
+      grid-row: 5/6;
+      justify-self: flex-end;
+      align-self: center;
+      padding: 16px 32px ;
+      margin-bottom: 10px;
+      margin-right: 50px;
+      border-radius: 10px;
+      background-color: rgba(110, 166, 227, 0.4);
+      color: #fff;
+      &:hover {
+        background-color: rgba(110, 166, 227, 1);
+        cursor: pointer;
+      }
+    }
+  }
+
+  .skills {
+    width: 100%;
+    min-height: 85vh;
+    margin-top: 100px;
+    padding-top: 60px;
+    background-color: rgb(8, 78, 139);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 30% 70%;
+
+    .skill-list {
+      grid-column: 1/3;
+      grid-row: 2/3;
+      margin-top: 20px;
+      margin-bottom: 30px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+
+  .contact-banner {
+    width: 100%;
+    min-height: 85vh;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h3 {
+      color: #fff;
+      font-size: 48px;
+      font-family: var.$caption;
+      padding-bottom: 30px;
+    }
+
+    .banner {
+      width: 60%;
+      height: 60vh;
+      background-color: rgb(32, 71, 189);
+      position: relative;
+
+      .contact-btn {
+        padding: 16px 40px;
+        background-color: rgba(110, 166, 227, 0.4);
+        position: absolute;
+        bottom: 150px;
+        left: 44%;
+        border-radius: 10px;
+        &:hover {
+          background-color: rgba(110, 166, 227, 1);
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .top-scroll {
+    width: 60px;
+    height: 60px;
+    position: fixed;
+    right: 20px;
+    bottom: 80px;
+    border-radius: 30px;
+    background-color: rgba(151, 226, 240, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9;
+    transition: 300ms;
+    &:hover {
+      background-color: rgb(19, 48, 137);
+      cursor: pointer;
+    }
+  
+    span {
+      color: gray;
+    }
+  }
+}
