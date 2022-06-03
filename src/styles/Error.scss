@@ -1,0 +1,44 @@
+@use './variables' as var;
+
+.error {
+  width: 100%;
+  min-height: 90vh;
+  margin-top: var.$header_margin;
+
+  .error-container {
+    width: 90%;
+    min-height: 80vh;
+    margin: 0 auto;
+    background-color: rgba(28, 79, 160, 0.5);
+    border: 2px solid rgba(28, 79, 160, 1);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 30% repeat(2, 1fr) 30%;
+
+    p {
+      grid-column: 1/2;
+      grid-row: 2/3;
+      justify-self: center;
+      align-self: center;
+      color: #fff;
+      font-size: 45px;
+      font-family: var.$caption;
+    }
+
+    .top-btn {
+      grid-column: 1/2;
+      grid-row: 3/4;
+      justify-self: center;
+      align-self: center;
+      padding: 16px 32px;
+      border-radius: 10px;
+      background-color: rgba(13, 78, 183, 0.5);
+      color: rgb(214, 218, 236);
+      &:hover {
+        background-color: rgba(13, 78, 183, 1);
+        color: #fff;
+        cursor: pointer;
+      }
+    }
+  }
+}
