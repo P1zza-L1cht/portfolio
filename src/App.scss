@@ -1,3 +1,5 @@
+@use './styles/variables' as var;
+
 //Reset.css
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
@@ -50,7 +52,7 @@ table {
 
 //basic setting
 body {
-  background-color: #8aa0af;
+  background-color: var.$background_color;
 }
 
 ::-webkit-scrollbar {
@@ -58,9 +60,9 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #2f5167;
+  background: var.$background_color;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #2f5167;
+  background: var.$Base_color;
 }
