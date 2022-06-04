@@ -1,5 +1,5 @@
 import { faCode, faImages, faPencil, faToolbox } from '@fortawesome/free-solid-svg-icons';
-import { faAws, faCss3, faFigma, faHtml5, faJs, faReact, faWordpress } from '@fortawesome/free-brands-svg-icons';
+import { faAws, faCss3, faFigma, faHtml5, faJs, faReact, faSass, faWordpress } from '@fortawesome/free-brands-svg-icons';
 
 
 export const skillsList = [
@@ -10,6 +10,10 @@ export const skillsList = [
   {
     name: 'CSS',
     iconName: faCss3
+  },
+  {
+    name: 'Sass',
+    iconName: faSass
   },
   {
     name: 'Ruby',

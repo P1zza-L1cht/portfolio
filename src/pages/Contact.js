@@ -24,7 +24,7 @@ export default function Contact() {
   if (isSubmitted === true) {
     content = (
       <div className="thx-modal">
-        <p>お問い合わせありがとうございます。<br/>返信までしばらくお待ちください。</p>
+        <p>お問い合わせありがとうございます。</p>
       </div>
     )
   } else {
