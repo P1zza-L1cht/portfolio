@@ -1,9 +1,13 @@
 @use './variables' as var;
 @use './animation' as *;
+@use './media' as *;
 
 .main {
   width: 100%;
   padding-top: var.$header_height;
+  @include mq(tablet) {
+    padding-top: 0;
+  }
 
   .main-visual {
     width: 100%;
@@ -17,6 +21,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    @include mq(tablet) {
+      min-height: 90vh;
+    }
 
     .main-letter {
       cursor: default;
@@ -24,6 +31,8 @@
       font-family: var.$caption;
       color: white;
       transition: 200ms;
+      @include mq(tablet) {
+      }
       &:hover {
         @include letterChange;
         cursor: pointer;

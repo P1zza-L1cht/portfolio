@@ -1,13 +1,18 @@
 @use './variables' as var;
+@use './media' as *;
 
 header {
   width: 100%;
-  height: var.$header_height;
+  min-height: var.$header_height;
   background-color: rgba(255, 255, 255, 0.8);
   position: fixed;
   top: 0;
   z-index: 10;
   display: flex;
+  @include mq(tablet) {
+    display: inline-block;
+    position: relative;
+  }
 
   .logo {
     height: 100%;
@@ -18,8 +23,40 @@ header {
     font-family: var.$caption;
     cursor: default;
     color: rgb(20, 160, 220);
+
+    @include mq(tablet) {
+      margin-left: 10px;
+      margin-top: 20px;
+      width: 100%;
+      height: var.$header_height - 20px;
+      text-align: center;
+      top: 20px;
+    }
   }
 
+  .toggle-btn {
+    display: none;
+    align-items: flex-end;
+
+    @include mq(tablet) {
+      display: block;
+      align-items: flex-end;
+      position: absolute;
+      top: 0px;
+      right: 10px;
+    }
+  }
+
+  #open {
+    display: block;
+    z-index: 10;
+  }
+
+  #close {
+    @include mq(tablet) {
+      display: none;
+    }
+  }
   .navigation {
     width: 80%;
     display: flex;
@@ -27,6 +64,11 @@ header {
     justify-content: flex-end;
     align-items: center;
     text-align: center;
+
+    @include mq(tablet) {
+      width: 100%;
+      position: absolute;
+    }
 
     a {
       text-decoration: none;
@@ -36,6 +78,9 @@ header {
     .link {
       margin-right: 30px;
       font-size: 1rem;
+      @include mq(tablet) {
+        margin-right: 0;
+      }
 
       .sub-title {
         margin-top: 3px;
@@ -48,9 +93,19 @@ header {
       padding: 5px 0;
       background-color: rgba(66, 147, 182, 0.4);
       border-radius: 5px;
+
+      @include mq(tablet) {
+        width: 100%;
+        background-color: rgb(66, 147, 182);
+        border: 0.5px solid rgba(11, 117, 162, 0.658);
+        border-radius: 0;
+        padding: 10px;
+      }
+
       &:hover {
-        background-color: rgba(66, 147, 182);
+        background-color: rgb(66, 147, 182);
       }
     }
   }
 }
+
