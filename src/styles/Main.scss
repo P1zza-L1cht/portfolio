@@ -11,7 +11,7 @@
 
   .main-visual {
     width: 100%;
-    min-height: 85vh;
+    min-height: 90vh;
     margin: 0 auto;
     background-image: url('../images/decoration/mainvisual.png');
     background-repeat: no-repeat;
@@ -25,6 +25,10 @@
       min-height: 90vh;
     }
 
+    @include mq(phone) {
+      background-image: url('../images/decoration/media-main.png');
+    }
+
     .main-letter {
       cursor: default;
       font-size: 120px;
@@ -32,6 +36,7 @@
       color: white;
       transition: 200ms;
       @include mq(tablet) {
+        font-size: 80px;
       }
       &:hover {
         @include letterChange;
@@ -42,84 +47,111 @@
 
   .about {
     width: 100%;
-    min-height: 85vh;
-    margin-top: 100px;
-    display: grid;
-    grid-template-columns: 5% repeat(3, 1fr) 5%;
-    grid-template-rows: 10% repeat(3, 1fr) 10%;
-    gap: 20px;
-    background-color: rgba(8, 78, 139, 0.61);
+    min-height: 100vh;
+    padding-top : 80px;
+    padding-bottom: 80px;
+    background-color: rgb(12, 72, 117);
+    display: flex;
+    flex-wrap: wrap;
 
-    .about-png {
-      grid-column: 1/4;
-      grid-row: 1/3;
-      background-image: url('../images/decoration/about.png');
-      background-repeat: no-repeat;
-      background-position: left top;
-      background-size: contain;
+
+    .about-caption {
+      width: 100%;
+      height: 50px;
+      margin-bottom: 20px;
+      font-family: var.$caption;
+      font-size: 48px;
+      text-align: center;
+      @include mq(phone) {
+        margin-bottom: 0;
+      }
     }
 
     .portrait {
-      grid-column: 2/3;
-      grid-row: 3/5;
-      background-color: rgba(110, 167, 227, 0.266);
+      width: 30%;
+      margin-left: auto;
+
+      @include mq(phone) {
+        width: 100%;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
     }
 
     .about-content {
-      grid-column: 3/5;
-      grid-row: 2/5;
+      width: 60%;
+      margin-right: auto;
       border-radius: var.$border;
+      padding: 20px;
       background-color: rgba(162, 182, 201, 0.426);
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      position: relative;
+      @include mq(phone) {
+        width: 100%;
+      }
 
-      p {
+      #pc {
         font-size: 20px;
-        letter-spacing: 1px;
+        line-height: normal;
+
+        @include mq(phone) {
+          display: none;
+        }
+      }
+
+      #phone {
+        display: none;
+
+        @include mq(phone) {
+          display: block;
+        }
       }
     }
 
     .about-btn {
-      grid-column: 3/5;
-      grid-row: 5/6;
-      justify-self: flex-end;
-      align-self: center;
       padding: 16px 32px ;
       margin-bottom: 10px;
       margin-right: 50px;
       border-radius: 10px;
-      background-color: rgba(110, 166, 227, 0.4);
+      background-color: rgba(42, 47, 204, 0.4);
       color: #fff;
+      position: absolute;
+      bottom: 5px;
+      right: 10px;
+      transition: 40ms;
       &:hover {
-        background-color: rgba(110, 166, 227, 1);
+        background-color: rgba(42, 47, 204, 1);
         cursor: pointer;
       }
     }
   }
 
   .skills {
-    width: 100%;
+    width: 90%;
+    margin: 0 auto;
     min-height: 85vh;
     margin-top: 100px;
-    padding-top: 60px;
-    background-color: rgba(8, 78, 139, 0.597);
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 30% 70%;
+    padding-top: 80px;
+    @include mq(phone) {
+      margin-top: 20px;
+    }
 
-    .skills-png {
-      grid-column: 1/2;
-      grid-row: 1/3;
-      background-image: url('../images/decoration/skills.png');
-      background-repeat: no-repeat;
-      background-position: left top;
-      background-size: contain;
+    .skills-caption {
+      width: 100%;
+      margin-bottom: 20px;
+      h2 {
+           text-align: center;
+      font-size: 48px;
+      font-family: var.$caption;
+      @include mq(phone) {
+        font-size: 40px;
+      }
+      }
     }
 
     .skill-list {
-      grid-column: 1/3;
-      grid-row: 2/3;
       margin-top: 20px;
       margin-bottom: 30px;
       display: flex;
@@ -133,14 +165,15 @@
     width: 100%;
     min-height: 85vh;
     margin-top: 100px;
-    margin-bottom: 100px;
+    padding-bottom: 100px;
+    background-color: rgb(12, 72, 117);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
     h3 {
-      color: #fff;
+      color: rgb(0, 0, 0);
       font-size: 48px;
       font-family: var.$caption;
       padding-bottom: 30px;
@@ -154,6 +187,11 @@
       background-size: cover;
       background-repeat: no-repeat;
       position: relative;
+      @include mq(phone) {
+        width: 100%;
+        height: 30vh;
+        background-size: contain;
+      }
 
       .banner-text {
         font-size: 30px;
@@ -162,6 +200,11 @@
         position: absolute;
         top: 40%;
         left: 32%;
+        @include mq(phone) {
+          font-size: 20px;
+          top: 50%;
+          left: 18%;
+        }
       }
 
       .contact-btn {
@@ -171,6 +214,11 @@
         bottom: 150px;
         left: 44%;
         border-radius: 10px;
+        transition: 40ms;
+        @include mq(phone) {
+          left: 32%;
+          bottom: -100px;
+        }
         &:hover {
           background-color: rgb(31, 124, 223);
           color: #fff;

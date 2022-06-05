@@ -1,16 +1,32 @@
+@use './animation' as *;
+@use './media' as *;
 
 .skill-card {
   width: 180px;
   height: 200px;
   margin-top: 30px;
   margin-right: 20px;
-  background-color: rgba(213, 218, 220, 0.742);
+  background-color: rgba(45, 133, 171, 0.742);
   align-items: center;
   border-radius: 10px;
+  @include mq(phone) {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin: 10px auto;
+  }
+
+  &:hover {
+    @include flow;
+  }
 
   .skill-icon {
     margin-top: 40px;
     text-align: center;
+    @include mq(phone) {
+      margin: 0;
+      padding-top: 15px;
+    }
   }
 
   .skill-name {
@@ -18,5 +34,10 @@
     text-align: center;
     font-size: 23px;
     color: rgb(7, 27, 44);
+
+    @include mq(phone) {
+      margin-top: 3px;
+      font-size: 14px;
+    }
   }
 }

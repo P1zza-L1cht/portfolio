@@ -77,7 +77,7 @@ export default function Experience() {
         </VerticalTimelineElement>
         <VerticalTimelineElement
           className="vertical-timeline-element--work"
-          date="2018.7 - 2018.12"
+          date="2017.7 - 2017.12"
           iconStyle={{ background: "#e9d35b", color: "#fff" }}
           icon={<FontAwesomeIcon icon={faBuilding} />}
         >
@@ -111,8 +111,8 @@ export default function Experience() {
             ブラックレーベルにて働く
           </h3>
           <h4 className="vertical-timeline-element-subtitle">
-            2019.2 - IDAの派遣社員として働く<br/>
-            2019.11 - 三陽商会の契約社員になる<br/>
+            2018.2 - IDAの派遣社員として働く<br/>
+            2018.11 - 三陽商会の契約社員になる<br/>
             2020.8 - 店長代理になる
             2020.12 適応障害になり退職
           </h4>

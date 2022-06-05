@@ -6,6 +6,7 @@ import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
 import SkillsPart from "../components/SkillsPart";
 import { skillsList } from '../contents/skillsList';
 import Description from "../components/Description";
+import selfy from '../images/decoration/selfy.png';
 
 export default function Main() {
   const iconStyle = {padding: 10, fontSize: 40, color: 'white'};
@@ -63,15 +64,15 @@ export default function Main() {
         </h2>
       </div>
       <div className="about">
-        <div className="about-png"></div>
-        <div className="portrait"></div>
+        <div className="about-caption">ABOUT ME</div>
+        <div className="portrait"><img src={selfy} alt="self" /></div>
         <div className="about-content">
           <Description />
+          <div className="about-btn" onClick={() => {navi('/experience')}}>詳しく見る</div>
         </div>
-        <div className="about-btn" onClick={() => {navi('/experience')}}>詳しく見る</div>
       </div>
       <div className="skills">
-        <div className="skills-png"></div>
+        <div className="skills-caption"><h2>Skills and Tools</h2></div>
         <div className="skill-list">
         {skillsList.map((skill) => {
           return(
@@ -83,7 +84,7 @@ export default function Main() {
       <div className="contact-banner">
         <h3>Contact</h3>
         <div className="banner">
-          <div className="banner-text">If you have some question.</div>
+          <div className="banner-text">お気軽にお問い合わせください</div>
           <div className="contact-btn" onClick={() => {navi('/contact')}}>Click Me</div>
         </div>
       </div>

@@ -93,6 +93,7 @@ header {
       padding: 5px 0;
       background-color: rgba(66, 147, 182, 0.4);
       border-radius: 5px;
+      transition: 40ms;
 
       @include mq(tablet) {
         width: 100%;
