@@ -1,0 +1,54 @@
+@use './media' as *;
+
+.descript {
+  position: relative;
+  padding-bottom: 100px;
+  #pc {
+    font-size: 20px;
+    line-height: normal;
+
+    @include mq(phone) {
+      display: none;
+      margin-bottom: 10px;
+    }
+  }
+
+  #phone {
+    display: none;
+
+    @include mq(phone) {
+      display: block;
+    }
+
+    .lang-tog {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    #none {
+      display: none;
+    }
+
+    #display {
+      display: inline-block;
+    }
+  }
+
+  .about-btn {
+    padding: 16px 32px ;
+    margin-bottom: 10px;
+    margin-right: 50px;
+    border-radius: 10px;
+    background-color: rgba(42, 47, 204, 0.4);
+    color: #fff;
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+    transition: 40ms;
+    &:hover {
+      background-color: rgba(42, 47, 204, 1);
+      cursor: pointer;
+    }
+  }
+}

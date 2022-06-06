@@ -68,7 +68,6 @@ export default function Main() {
         <div className="portrait"><img src={selfy} alt="self" /></div>
         <div className="about-content">
           <Description />
-          <div className="about-btn" onClick={() => {navi('/experience')}}>詳しく見る</div>
         </div>
       </div>
       <div className="skills">

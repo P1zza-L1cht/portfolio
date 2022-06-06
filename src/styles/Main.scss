@@ -62,7 +62,7 @@
       font-family: var.$caption;
       font-size: 48px;
       text-align: center;
-      @include mq(phone) {
+      @include mq(tablet) {
         margin-bottom: 0;
       }
     }
@@ -71,9 +71,15 @@
       width: 30%;
       margin-left: auto;
 
+      @include mq(tablet) {
+        width: 70%;
+        margin: 0 auto;
+      }
+
       @include mq(phone) {
         width: 100%;
       }
+      
       img {
         width: 100%;
         height: 100%;
@@ -87,43 +93,8 @@
       border-radius: var.$border;
       padding: 20px;
       background-color: rgba(162, 182, 201, 0.426);
-      position: relative;
-      @include mq(phone) {
+      @include mq(tablet) {
         width: 100%;
-      }
-
-      #pc {
-        font-size: 20px;
-        line-height: normal;
-
-        @include mq(phone) {
-          display: none;
-        }
-      }
-
-      #phone {
-        display: none;
-
-        @include mq(phone) {
-          display: block;
-        }
-      }
-    }
-
-    .about-btn {
-      padding: 16px 32px ;
-      margin-bottom: 10px;
-      margin-right: 50px;
-      border-radius: 10px;
-      background-color: rgba(42, 47, 204, 0.4);
-      color: #fff;
-      position: absolute;
-      bottom: 5px;
-      right: 10px;
-      transition: 40ms;
-      &:hover {
-        background-color: rgba(42, 47, 204, 1);
-        cursor: pointer;
       }
     }
   }
